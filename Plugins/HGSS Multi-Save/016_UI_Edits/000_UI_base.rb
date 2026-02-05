@@ -1,9 +1,3 @@
-module Settings
-  # :one, :adventure, :multiple
-  SAVE_SLOTS = :multiple
-  SKIP_CONTINUE_SCREEN = false
-end
-
 #===============================================================================
 # Sprite class that maintains a bitmap of its own.
 # This bitmap can't be changed to a different one.
