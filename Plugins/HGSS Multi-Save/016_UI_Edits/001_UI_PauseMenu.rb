@@ -31,10 +31,13 @@ MenuHandlers.add(:pause_menu, :quit_game, {
     menu.pbHideMenu
     if pbConfirmMessage(_INTL("Are you sure you want to quit the game?"))
 	  # Suggested by http404error: https://eeveeexpo.com/resources/1059/
-	  SaveData.mark_values_as_unloaded
+	  pbPlayCloseMenuSE
 	  pbBGMFade(1.0)
 	  pbBGSFade(1.0)
+	  menu.visuals.fade_out
+	  menu.silent_end_screen
       $scene = pbCallTitle
+	  SaveData.mark_values_as_unloaded
       next true
     end
     menu.pbRefresh

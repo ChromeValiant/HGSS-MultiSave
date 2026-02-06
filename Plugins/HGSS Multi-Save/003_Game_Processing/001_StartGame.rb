@@ -5,7 +5,11 @@ module Game
   module_function
 
   # Initializes various global variables and loads the game data.
+  class << Game
+    alias initialize_multisave initialize
+  end
   def initialize
+    initialize_multisave
     $game_temp          = Game_Temp.new
     $game_system        = Game_System.new
     $data_animations    = load_data("Data/Animations.rxdata")
